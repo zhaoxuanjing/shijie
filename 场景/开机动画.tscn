@@ -1,0 +1,153 @@
+[gd_scene load_steps=8 format=3 uid="uid://cdt7ghwfgrhmk"]
+
+[ext_resource type="Script" path="res://场景/开机动画.gd" id="1_ei1ud"]
+[ext_resource type="Texture2D" uid="uid://wd7gpmybm14r" path="res://ico/灰色.png" id="2_n55ol"]
+[ext_resource type="Texture2D" uid="uid://c31028yiau6ds" path="res://ico/logo_1.png" id="3_a8cl5"]
+[ext_resource type="Texture2D" uid="uid://b741kd7eslqlf" path="res://ico/logo_2.png" id="4_djh5a"]
+
+[sub_resource type="Animation" id="Animation_bn31r"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("图标2/Logo2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(440, 128)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("图标1/Logo1:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-56, 104)]
+}
+
+[sub_resource type="Animation" id="Animation_ttoya"]
+resource_name = "开机"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.9, 1.9, 2.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("图标2/Logo2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(440, 128), Vector2(244.608, 128)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("图标1/Logo1:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-56, 104), Vector2(152, 104)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1juxi"]
+_data = {
+"RESET": SubResource("Animation_bn31r"),
+"开机": SubResource("Animation_ttoya")
+}
+
+[node name="开机动画" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ei1ud")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(191.5, 108)
+scale = Vector2(0.297656, 0.305556)
+texture = ExtResource("2_n55ol")
+
+[node name="图标1" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Logo1" type="Sprite2D" parent="图标1"]
+position = Vector2(-56, 104)
+scale = Vector2(0.116, 0.116)
+texture = ExtResource("3_a8cl5")
+
+[node name="图标2" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.392
+offset_top = -24.0
+offset_right = 3.392
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Logo2" type="Sprite2D" parent="图标2"]
+position = Vector2(440, 128)
+scale = Vector2(0.117, 0.117)
+texture = ExtResource("4_djh5a")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
+metadata/_edit_lock_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_1juxi")
+}
+autoplay = "开机"
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

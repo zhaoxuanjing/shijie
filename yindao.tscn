@@ -1,0 +1,47 @@
+[gd_scene load_steps=2 format=3 uid="uid://bl1fbgn1aqql2"]
+
+[ext_resource type="Script" path="res://yindao.gd" id="1_0k4m3"]
+
+[node name="Yindao" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0k4m3")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -200.0
+offset_right = 400.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 10
+text = "在一个人类的相互争夺的战争的世界中
+有人在战争中想独善其身，有人面对侵略奋勇抵抗
+有人在战争中烧杀抢掠
+直到一堆怪物的到来，没人清楚它们从哪里来
+有人说是人类的烧杀抢夺激怒了上天，这些是派来惩罚人类的
+这些怪物不会老也不会自然死亡，迅速攻占了人类大量生活栖息地
+人类世界出现了两级分化
+有人带家人一同逃难，有人起义抵抗怪物...."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2

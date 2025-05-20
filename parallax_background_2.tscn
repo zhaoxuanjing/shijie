@@ -1,0 +1,78 @@
+[gd_scene load_steps=3 format=3 uid="uid://cx64horaunkyn"]
+
+[ext_resource type="Texture2D" uid="uid://xmq3w2bg34vx" path="res://总素材/背景/Background.png" id="1_mjh1u"]
+[ext_resource type="Texture2D" uid="uid://blahujc6trn53" path="res://总素材/背景/Background1.png" id="2_mhn12"]
+
+[node name="ParallaxBackground2" type="ParallaxBackground"]
+
+[node name="sky" type="ParallaxLayer" parent="."]
+modulate = Color(0.858824, 0.858824, 0.858824, 1)
+light_mask = 0
+motion_scale = Vector2(0.02, 0.02)
+
+[node name="Sprite2D" type="Sprite2D" parent="sky"]
+texture_filter = 1
+position = Vector2(575, 250)
+scale = Vector2(2.37917, 2.36397)
+texture = ExtResource("1_mjh1u")
+
+[node name="mountain" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.04, 0.04)
+motion_mirroring = Vector2(529.005, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="mountain"]
+texture_filter = 1
+position = Vector2(137.305, 319.793)
+scale = Vector2(2.79783, 2.45545)
+texture = ExtResource("2_mhn12")
+region_enabled = true
+region_rect = Rect2(704, 11, 97, 245)
+
+[node name="Sprite2D2" type="Sprite2D" parent="mountain"]
+texture_filter = 1
+position = Vector2(399.305, 319.793)
+scale = Vector2(2.79783, 2.45545)
+texture = ExtResource("2_mhn12")
+region_enabled = true
+region_rect = Rect2(704, 11, 97, 245)
+
+[node name="forest" type="ParallaxLayer" parent="."]
+position = Vector2(45, 79)
+motion_scale = Vector2(0.1, 0.1)
+motion_mirroring = Vector2(570.3, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="forest"]
+position = Vector2(0, 128)
+texture = ExtResource("2_mhn12")
+region_enabled = true
+region_rect = Rect2(464, -1, 96, 251)
+
+[node name="Sprite2D2" type="Sprite2D" parent="forest"]
+position = Vector2(95, 128)
+texture = ExtResource("2_mhn12")
+region_enabled = true
+region_rect = Rect2(464, -1, 96, 251)
+
+[node name="Sprite2D3" type="Sprite2D" parent="forest"]
+position = Vector2(190, 128)
+texture = ExtResource("2_mhn12")
+region_enabled = true
+region_rect = Rect2(464, -1, 96, 251)
+
+[node name="Sprite2D4" type="Sprite2D" parent="forest"]
+position = Vector2(285, 128)
+texture = ExtResource("2_mhn12")
+region_enabled = true
+region_rect = Rect2(464, -1, 96, 251)
+
+[node name="Sprite2D5" type="Sprite2D" parent="forest"]
+position = Vector2(380, 128)
+texture = ExtResource("2_mhn12")
+region_enabled = true
+region_rect = Rect2(464, -1, 96, 251)
+
+[node name="Sprite2D6" type="Sprite2D" parent="forest"]
+position = Vector2(475, 128)
+texture = ExtResource("2_mhn12")
+region_enabled = true
+region_rect = Rect2(464, -1, 96, 251)

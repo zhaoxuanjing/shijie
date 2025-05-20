@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://dshc5u755anng"]
+
+[ext_resource type="Script" path="res://传送门/Teleporter.gd" id="1_hd1wf"]
+[ext_resource type="Texture2D" uid="uid://dxh5g062h6rkr" path="res://总素材/地图素材/建筑.png" id="2_7jbvd"]
+[ext_resource type="Texture2D" uid="uid://clpruy3h36bcx" path="res://总素材/地图素材/石头.png" id="2_58s22"]
+[ext_resource type="Texture2D" uid="uid://ddyfqvot3dtx1" path="res://总素材/背景/Salt.png" id="4_shr05"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ly7vi"]
+size = Vector2(32, 87.5)
+
+[node name="Teleporter" type="Area2D"]
+position = Vector2(43, 3)
+script = ExtResource("1_hd1wf")
+
+[node name="石头" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-1, -11)
+texture = ExtResource("2_58s22")
+region_enabled = true
+region_rect = Rect2(3, 83, 60, 80)
+
+[node name="建筑" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, 2)
+texture = ExtResource("2_7jbvd")
+region_enabled = true
+region_rect = Rect2(340, 119, 41, 58)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -10.25)
+shape = SubResource("RectangleShape2D_ly7vi")
+
+[node name="Salt" type="Sprite2D" parent="."]
+position = Vector2(2, -12)
+scale = Vector2(0.43625, 0.43625)
+texture = ExtResource("4_shr05")
+region_enabled = true
+region_rect = Rect2(16, 21, 96, 203)

@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://djykqys0rabg1"]
+
+[ext_resource type="Theme" uid="uid://dxb10k14p54vb" path="res://场景/主题.tres" id="1_gcsif"]
+[ext_resource type="Script" path="res://ui/volume_slider.gd" id="2_q60di"]
+
+[node name="VolumeSlider" type="HSlider"]
+anchors_preset = -1
+anchor_right = 0.031
+anchor_bottom = 0.021
+offset_right = 153.096
+offset_bottom = 11.464
+theme = ExtResource("1_gcsif")
+max_value = 1.0
+step = 0.1
+value = 0.5
+script = ExtResource("2_q60di")

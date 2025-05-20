@@ -1,0 +1,14 @@
+AnimationPlayer
+Interactable
+Sprite2D
+CollisionShape2D
+GPUParticles2D
+Timer
+Label
+CanvasLayer
+ColorRect
+Control
+TouchScreenButton
+Camera2D
+Hurtbox
+Hitbox

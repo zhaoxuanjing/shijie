@@ -1,0 +1,51 @@
+[gd_scene load_steps=8 format=3 uid="uid://pkfjaai4hxpy"]
+
+[ext_resource type="Script" path="res://主角/classes/StateMachine.gd" id="1_ev3q4"]
+[ext_resource type="Script" path="res://enemise/enemy.gd" id="1_rofbt"]
+[ext_resource type="Script" path="res://主角/classes/Hitbox.gd" id="2_lr25l"]
+[ext_resource type="Script" path="res://主角/classes/Hurtbox.gd" id="3_g3n0e"]
+[ext_resource type="Script" path="res://主角/classes/Stats.gd" id="5_tsh4i"]
+
+[sub_resource type="Animation" id="Animation_fa4wr"]
+length = 0.001
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0mjab"]
+_data = {
+"RESET": SubResource("Animation_fa4wr")
+}
+
+[node name="Enemy" type="CharacterBody2D" groups=["enemies"]]
+collision_layer = 4
+script = ExtResource("1_rofbt")
+
+[node name="Graphics" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Graphics"]
+position = Vector2(1.67241, -4.67109)
+scale = Vector2(1.32347, 1.11585)
+region_enabled = true
+region_rect = Rect2(61, 0, 790, 120)
+
+[node name="Hitbox" type="Area2D" parent="Graphics"]
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("2_lr25l")
+
+[node name="Hurtbox" type="Area2D" parent="Graphics"]
+collision_layer = 16
+collision_mask = 0
+script = ExtResource("3_g3n0e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource("1_ev3q4")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../CollisionShape2D")
+libraries = {
+"": SubResource("AnimationLibrary_0mjab")
+}
+
+[node name="Stats" type="Node" parent="."]
+script = ExtResource("5_tsh4i")

@@ -1,0 +1,17 @@
+res://场景/场景三/灰色三.tscn
+res://对话/New_File.tres
+res://对话/样式备份.tres
+res://enemise/镰刀怪.gd
+res://场景/主题.tres
+res://场景/场景一/world.tres
+res://场景/场景二/node_2d.gdshader
+res://暗角.gdshader
+res://场景/引导者.tscn
+res://场景/小孩.tscn
+res://yindao.tscn
+res://场景/t_itle_screen.tscn
+res://主角/player.tscn
+res://场景/场景一/world.tscn
+res://场景/场景四/场景四.tscn
+res://场景/game_over_screen.tscn
+res://场景/game_end_screen.tscn
